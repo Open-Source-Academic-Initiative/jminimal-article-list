@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="content" method="upgrade" version="5.0">
+    <name>plg_content_relatedminimal</name>
+    <description>Minimal Related Articles Plugin (Keywords + Random + Tag Embed)</description>
+
+    <files>
+        <filename plugin="relatedminimal">relatedminimal.php</filename>
+        <filename>index.html</filename>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="category_id" type="category" label="Target Category" extension="com_content"/>
+                <field name="limit" type="number" default="5" label="Max Related Articles"/>
+                <field name="use_keywords" type="radio" default="1" label="Match by Meta Keywords / Description?">
+                    <option value="1">Yes</option>
+                    <option value="0">No (Category Only)</option>
+                </field>
+                <field name="tag_token" type="text" default="{relatedminimal}" label="Content Tag Trigger"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
